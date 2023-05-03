@@ -9,6 +9,7 @@ PATH
       mime-types
       mimemagic
       multi_json
+      rack
       restless_router
       ruby-units
       terminal-table
@@ -65,6 +66,7 @@ GEM
       racc (~> 1.4)
     public_suffix (5.0.1)
     racc (1.6.2)
+    rack (3.0.7)
     rake (13.0.6)
     restless_router (0.0.3)
       addressable
