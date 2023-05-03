@@ -1,0 +1,14 @@
+[
+  {
+    "name": "Payouts",
+    "path": "{version}/payouts",
+    "rel": "payouts",
+    "templated": true
+  },
+  {
+    "name": "Payout",
+    "path": "{version}/payouts/{id}",
+    "rel": "payout",
+    "templated": true
+  }
+]
