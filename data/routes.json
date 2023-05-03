@@ -1,7 +1,7 @@
 [
   {
     "name": "Payouts",
-    "path": "{version}/payouts",
+    "path": "{version}/payouts{?expand}",
     "rel": "payouts",
     "templated": true
   },
