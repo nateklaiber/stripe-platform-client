@@ -1,0 +1,22 @@
+[
+  {
+    "id": "paid",
+    "description": "Paid"
+  },
+  {
+    "id": "pending",
+    "description": "Pending"
+  },
+  {
+    "id": "in_transit",
+    "description": "In Transit"
+  },
+  {
+    "id": "canceled",
+    "description": "Canceled"
+  },
+  {
+    "id": "failed",
+    "description": "Failed"
+  }
+]
