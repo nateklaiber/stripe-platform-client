@@ -15,6 +15,7 @@ module StripePlatform
             :email       => record_attributes['email'],
             :phone       => record_attributes['phone'],
             :metadata    => record_attributes.fetch('metadata', {}),
+            :address     => record_attributes.fetch('address', {}),
           }
 
           params
@@ -48,13 +49,30 @@ module StripePlatform
         def metadata
         end
 
+        def address_attributes
+          Hash(@attributes.fetch(:address, {}))
+        end
+
+        def address
+          StripePlatform::Requests::Models::Address.new(self.address_attributes)
+        end
+
         def as_original_attributes
           {
             'email'       => self.email,
             'name'        => self.name,
             'phone'       => self.phone,
             'description' => self.description,
+            'address'     => self.address.as_original_attributes,
           }
+        end
+
+        def as_form_encoded_attributes
+          self.as_original_attributes
+        end
+
+        def as_form_encoded
+          Rack::Utils.build_nested_query(self.as_form_encoded_attributes)
         end
 
         def as_json(*)

@@ -50,7 +50,7 @@ module StripePlatform
             end
           else
             req.headers['Content-Type'] = 'application/x-www-form-urlencoded'
-            req.body = URI.encode_www_form(request_model.as_original_attributes)
+            req.body = request_model.as_form_encoded
             req.url(url)
           end
         end
@@ -106,7 +106,7 @@ module StripePlatform
             end
           else
             req.headers['Content-Type'] = 'application/x-www-form-urlencoded'
-            req.body = URI.encode_www_form(request_model.as_original_attributes)
+            req.body = request_model.as_form_encoded
             req.url(url)
           end
         end

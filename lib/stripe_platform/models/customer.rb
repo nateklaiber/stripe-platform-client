@@ -2,7 +2,6 @@ module StripePlatform
   module Models
     class Customer
       include Comparable
-      extend Forwardable
 
       # Returns an instance of the customer
       #
@@ -81,6 +80,29 @@ module StripePlatform
       # @return [Hash]
       def address_attributes
         Hash(@attributes.fetch('address', {}))
+      end
+
+      # Returns true if there are any address attributes
+      #
+      # @return [Boolean]
+      def address_attributes?
+        !self.address_attributes.empty?
+      end
+
+      # Returns the associated address object
+      #
+      # @return [StripePlatform::Models::Address,NilClass]
+      def address
+        if self.address_attributes?
+          StripePlatform::Models::Address.new(self.address_attributes)
+        end
+      end
+
+      # Returns true if there is an address
+      #
+      # @return [Boolean]
+      def address?
+        !self.address.nil?
       end
 
       # Returns the currency code

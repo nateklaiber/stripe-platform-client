@@ -11,6 +11,8 @@ require 'date'
 require 'timezone'
 require 'multi_json'
 require 'restless_router'
+require 'rack/utils'
+
 require_relative 'client/version'
 
 require_relative 'unit'
