@@ -45,6 +45,8 @@ Gem::Specification.new do |spec|
   spec.add_dependency('timezone')
   spec.add_dependency('faraday')
   spec.add_dependency("terminal-table")
+  spec.add_dependency('mimemagic')
+  spec.add_dependency('mime-types')
 
   # Uncomment to register a new dependency of your gem
   # spec.add_dependency "example-gem", "~> 1.0"
