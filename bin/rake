@@ -4,6 +4,11 @@
 require "bundler/setup"
 require "stripe_platform/client"
 
+StripePlatform::Client.configure do |c|
+  c.logger = StripePlatform::Logger.new(File.expand_path('../../log/rake.log', __FILE__))
+  c.request_logger = StripePlatform::Logger.new(File.expand_path('../../log/requests.log', __FILE__))
+end
+
 # You can add fixtures and/or initialization code here to make experimenting
 # with your gem easier. You can also use a different console, if you like.
 
@@ -11,5 +16,5 @@ require "stripe_platform/client"
 # require "pry"
 # Pry.start
 
-require "irb"
-IRB.start(__FILE__)
+require "rake"
+Rake.application.run
