@@ -1,0 +1,18 @@
+[
+  {
+    "id": "api_error",
+    "description": "API errors cover any other type of problem (e.g., a temporary problem with Stripe's servers), and are extremely uncommon."
+  },
+  {
+    "id": "card_error",
+    "description": "Card errors are the most common type of error you should expect to handle. They result when the user enters a card that can't be charged for some reason."
+  },
+  {
+    "id": "idempotency_error",
+    "description": "Idempotency errors occur when an Idempotency-Key is re-used on a request that does not match the first request's API endpoint and parameters."
+  },
+  {
+    "id": "invalid_request_error",
+    "description": "Invalid request errors arise when your request has invalid parameters."
+  }
+]
