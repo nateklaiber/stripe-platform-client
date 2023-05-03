@@ -207,6 +207,15 @@ module StripePlatform
       self.configuration.version
     end
 
+    # Returns the default query params
+    #
+    # @return [Hash]
+    def self.default_query_params
+      {
+        :version       => self.default_version,
+      }
+    end
+
     # Returns the root path
     #
     # @return [Pathname]

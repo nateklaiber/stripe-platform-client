@@ -2,7 +2,7 @@ require File.expand_path('../utilities/status_code_mapper', __FILE__)
 require 'faraday_middleware'
 require 'delegate'
 
-module WeatherKit
+module StripePlatform
   class Response < SimpleDelegator
     STATUS_MAP = {
       :failure      => (400...500),
@@ -15,7 +15,7 @@ module WeatherKit
     #
     # @param response [Faraday::Response] HTTP response
     #
-    # @return [WeatherKit::Response]
+    # @return [StripePlatform::Response]
     def initialize(response)
       @_response = response
     end
@@ -31,9 +31,9 @@ module WeatherKit
     #
     # @param statuses [Array]
     #
-    # @return [WeatherKit::Response,NilClass]
+    # @return [StripePlatform::Response,NilClass]
     def on(*statuses, &block)
-      status_code_mapper = WeatherKit::Utilities::StatusCodeMapper.new(statuses)
+      status_code_mapper = StripePlatform::Utilities::StatusCodeMapper.new(statuses)
 
       return unless status_code_mapper.includes?(@_response.status)
 
