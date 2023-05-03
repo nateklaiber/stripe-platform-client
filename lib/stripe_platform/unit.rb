@@ -12,7 +12,7 @@ module StripePlatform
     # @return [StripePlatform::Unit]
     def initialize(*options)
       begin
-        @_record = ::Unit.new(options)
+        @_record = RubyUnits::Unit.new(options)
       rescue
         raise StripePlatform::Errors::MissingUnitDefinitionError.new("Could not find unit definition for %s" % [*options])
       end
