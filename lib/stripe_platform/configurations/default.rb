@@ -10,11 +10,12 @@ module StripePlatform
     # interface
     #
     module Default
-      API_HOST      = 'https://api.stripe.com'.freeze
-      USER_AGENT    = ("Stripe Platform Ruby Gem %s" % [StripePlatform::Client::VERSION]).freeze
-      MEDIA_TYPE    = 'application/json'.freeze
-      CONTENT_TYPE  = 'application/json'.freeze
-      VERSION       = 'v1'.freeze
+      API_HOST       = 'https://api.stripe.com'.freeze
+      USER_AGENT     = ("Stripe Platform Ruby Gem %s" % [StripePlatform::Client::VERSION]).freeze
+      MEDIA_TYPE     = 'application/json'.freeze
+      CONTENT_TYPE   = 'application/json'.freeze
+      VERSION        = 'v1'.freeze
+      ACTIVE_VERSION = '2022-11-15'.freeze
 
       # Return the collection of default options and values
       #
@@ -67,6 +68,10 @@ module StripePlatform
       # @return [String]
       def self.version
         ENV['STRIPE_PLATFORM_VERSION'] || VERSION
+      end
+
+      def self.active_version
+        ENV['STRIPE_PLATFORM_ACTIVE_VERSION'] || ACTIVE_VERSION
       end
 
       # Return the Default CORE Logger to STDOUT.

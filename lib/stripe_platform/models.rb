@@ -18,6 +18,9 @@ require File.expand_path('../models/payout', __FILE__)
 require File.expand_path('../models/balance_transactions', __FILE__)
 require File.expand_path('../models/balance_transaction', __FILE__)
 
+require File.expand_path('../models/customers', __FILE__)
+require File.expand_path('../models/customer', __FILE__)
+
 module StripePlatform
   module Models
   end

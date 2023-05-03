@@ -72,6 +72,9 @@ module StripePlatform
       # Inject Authorization
       @connection.headers['Authorization'] = ("Bearer %s" % [self.configuration.access_token])
 
+      # Inject the active version
+      @connection.headers['Stripe-Version'] = self.configuration.active_version
+
       # Merge default headers
       @connection.headers.merge!(self.configuration.connection_options[:headers])
 

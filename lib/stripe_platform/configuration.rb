@@ -12,6 +12,7 @@ module StripePlatform
     attr_accessor :media_type
     attr_accessor :content_type
     attr_accessor :version
+    attr_accessor :active_version
 
     # Logging
     attr_accessor :request_logger
@@ -31,6 +32,7 @@ module StripePlatform
         :media_type,
         :content_type,
         :version,
+        :active_version,
         :request_logger,
         :cache_logger,
         :logger
