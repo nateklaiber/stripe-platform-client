@@ -1,6 +1,6 @@
 module StripePlatform
   module Models
-    class Payouts
+    class BalanceTransactions
       include Enumerable
 
       def initialize(collection=[])
@@ -8,7 +8,7 @@ module StripePlatform
       end
 
       def self.list(params={}, &block)
-        request = StripePlatform::Requests::Payouts.list(params, &block)
+        request = StripePlatform::Requests::BalanceTransactions.list(params, &block)
 
         request.on(:success) do |resp|
           response_body    = resp.body
@@ -34,12 +34,12 @@ module StripePlatform
       end
 
       def self.retrieve(id, &block)
-        request = StripePlatform::Requests::Payouts.retrieve(id, &block)
+        request = StripePlatform::Requests::BalanceTransactions.retrieve(id, &block)
 
         request.on(:success) do |resp|
           response_body = resp.body
 
-          return StripePlatform::Models::Payout.new(response_body)
+          return StripePlatform::Models::BalanceTransaction.new(response_body)
         end
 
         request.on(:failure) do |resp|
@@ -61,7 +61,7 @@ module StripePlatform
 
       private
       def internal_collection
-        @collection.map { |record| StripePlatform::Models::Payout.new(record) }
+        @collection.map { |record| StripePlatform::Models::BalanceTransaction.new(record) }
       end
     end
   end

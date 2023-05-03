@@ -10,5 +10,17 @@
     "path": "{version}/payouts/{id}",
     "rel": "payout",
     "templated": true
+  },
+  {
+    "name": "Balance Transactions",
+    "path": "{version}/balance_transactions",
+    "rel": "balance-transactions",
+    "templated": true
+  },
+  {
+    "name": "Balance Transaction",
+    "path": "{version}/balance_transactions/{id}",
+    "rel": "balance-transaction",
+    "templated": true
   }
 ]

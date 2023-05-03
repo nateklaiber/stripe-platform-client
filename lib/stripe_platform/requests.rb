@@ -6,6 +6,8 @@ require File.expand_path('../requests/error_types', __FILE__)
 require File.expand_path('../requests/payout_statuses', __FILE__)
 require File.expand_path('../requests/payouts', __FILE__)
 
+require File.expand_path('../requests/balance_transactions', __FILE__)
+
 module StripePlatform
   module Requests
   end

@@ -26,9 +26,21 @@ module StripePlatform
         @attributes['id']
       end
 
-      # Returns the associated balance transaction id
+      # Returns the value of the balance transaction
       #
-      # @return [String]
+      # Unfortunately this gets overloaded to mean two different
+      # things depending on expansion. We want to keep the concerns
+      # separate between `balance_transaction_id` and `balance_transaction_attributes`
+      #
+      # @return [String,Hash]
+      def balance_transaction_value
+        @attributes['balance_transaction']
+      end
+
+      # Returns the associated balance transaction id if the
+      # type is a string
+      #
+      # @return [String,NilClass]
       def balance_transaction_id
         if self.balance_transaction_value.kind_of?(String)
           self.balance_transaction_value
@@ -37,14 +49,17 @@ module StripePlatform
         end
       end
 
+      # Returns true if there is a balance transaction id
+      #
+      # @return [Boolean]
       def balance_transaction_id?
         !self.balance_transaction_id.nil?
       end
 
-      def balance_trasaction_value
-        @attributes['balance_transaction']
-      end
-
+      # Returns the balance transaction attributes
+      # if the type is a Hash
+      #
+      # @return [Hash]
       def balance_transaction_attributes
         if self.balance_transaction_value.kind_of?(Hash)
           Hash(self.balance_transaction_value)
@@ -53,8 +68,32 @@ module StripePlatform
         end
       end
 
+      # Returns true if there are any balance transaction attributes. This
+      # would signal that it was expanded
+      #
+      # @return [Boolean]
       def balance_transaction_attributes?
         !self.balance_transaction_attributes.empty?
+      end
+
+      # This returns the associated balance transaction
+      #
+      # @return [StripePlatform::Models::BalanceTransaction]
+      def balance_transaction
+        if self.balance_transaction_id?
+          StripePlatform::Models::BalanceTransactions.retrieve(self.balance_transaction_id)
+        elsif self.balance_transaction_attributes?
+          StripePlatform::Models::BalanceTransaction.new(self.balance_transaction_attributes)
+        else
+          nil
+        end
+      end
+
+      # Returns true if there is no balance transaction
+      #
+      # @return [Boolean]
+      def balance_transaction?
+        !self.balance_transaction.nil?
       end
 
       # Returns the associated destination id
@@ -63,6 +102,16 @@ module StripePlatform
       def destination_id
         @attributes['destination']
       end
+
+      # Returns true if the payout was created by an automated payout schedule, and false
+      # if it was requested manually
+      #
+      # @return [Boolean]
+      def is_automatic
+        @attributes['automatic']
+      end
+      alias is_automatic? is_automatic
+      alias automatic? is_automatic
 
       # Returns the object type
       #
@@ -124,7 +173,7 @@ module StripePlatform
         begin
           StripePlatform::Unit.new(("%s %s" % [self.amount_decimal, self.currency_code.upcase]))
         rescue => e
-          StripePlatform::Client.logger.info('Payout') do
+          StripePlatform::Client.logger.info do
             e.message
           end
 
