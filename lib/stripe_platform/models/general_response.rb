@@ -56,6 +56,13 @@ module StripePlatform
         !self.data.nil?
       end
 
+      # Returns the count of records
+      #
+      # @return [Integer]
+      def count
+        @attributes['count']
+      end
+
       # Returns true if there are more records
       #
       # @return [Boolean]
