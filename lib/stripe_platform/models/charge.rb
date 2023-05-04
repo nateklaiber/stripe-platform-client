@@ -25,7 +25,7 @@ module StripePlatform
       end
 
       def refunds
-        StripePlatform::Models::Refunds.list(charge: self.id)
+        StripePlatform::Models::Refunds.list(charge_id: self.id)
       end
 
       def refunds?

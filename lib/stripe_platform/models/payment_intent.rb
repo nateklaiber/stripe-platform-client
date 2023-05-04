@@ -36,7 +36,7 @@ module StripePlatform
       end
 
       def refunds
-        StripePlatform::Models::Refunds.list(payment_intent: self.id)
+        StripePlatform::Models::Refunds.list(payment_intent_id: self.id)
       end
 
       def refunds?
