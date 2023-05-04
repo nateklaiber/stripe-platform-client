@@ -40,5 +40,41 @@
     "path": "{version}/customers/{id}",
     "rel": "customer",
     "templated": true
+  },
+  {
+    "name": "Customer Payment Methods",
+    "path": "{version}/customers/{customer_id}/payment_methods",
+    "rel": "customer-payment-methods",
+    "templated": true
+  },
+  {
+    "name": "Customer Payment Method",
+    "path": "{version}/customers/{customer_id}/payment_methods/{id}",
+    "rel": "customer-payment-method",
+    "templated": true
+  },
+  {
+    "name": "Payment Methods",
+    "path": "{version}/payment_methods",
+    "rel": "payment-methods",
+    "templated": true
+  },
+  {
+    "name": "Payment Method",
+    "path": "{version}/payment_methods/{id}",
+    "rel": "payment-method",
+    "templated": true
+  },
+  {
+    "name": "Payment Method - Attach",
+    "path": "{version}/payment_methods/{id}/attach",
+    "rel": "payment-method-attach",
+    "templated": true
+  },
+  {
+    "name": "Payment Method - Detach",
+    "path": "{version}/payment_methods/{id}/detach",
+    "rel": "payment-method-detach",
+    "templated": true
   }
 ]
