@@ -100,5 +100,23 @@
     "path": "{version}/payment_intents/{id}",
     "rel": "payment-intent",
     "templated": true
+  },
+  {
+    "name": "Charges",
+    "path": "{version}/charges",
+    "rel": "charges",
+    "templated": true
+  },
+  {
+    "name": "Charge",
+    "path": "{version}/charges/{id}",
+    "rel": "charge",
+    "templated": true
+  },
+  {
+    "name": "Charge - Capture",
+    "path": "{version}/charges/{charge_id}/capture",
+    "rel": "charge-capture",
+    "templated": true
   }
 ]
