@@ -30,7 +30,14 @@ require File.expand_path('../models/balance_transaction', __FILE__)
 require File.expand_path('../models/customers', __FILE__)
 require File.expand_path('../models/customer', __FILE__)
 
+require File.expand_path('../models/payment_methods', __FILE__)
+require File.expand_path('../models/payment_method', __FILE__)
+
 require File.expand_path('../models/address', __FILE__)
+
+require File.expand_path('../models/billing_details', __FILE__)
+require File.expand_path('../models/card_checks', __FILE__)
+require File.expand_path('../models/card', __FILE__)
 
 module StripePlatform
   module Models
