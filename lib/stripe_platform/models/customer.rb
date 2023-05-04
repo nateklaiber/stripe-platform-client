@@ -154,6 +154,14 @@ module StripePlatform
       alias is_delinquent? is_delinquent
       alias delinquent? is_delinquent
 
+      def metadata_attributes
+        Hash(@attributes.fetch('metadata', {}))
+      end
+
+      def metadata
+        @metadata ||= StripePlatform::Models::Metadata.new(self.metadata_attributes)
+      end
+
       # Returns the created unix timestamp
       #
       # @return [Integer]

@@ -1,6 +1,8 @@
 require File.expand_path('../models/directory', __FILE__)
 require File.expand_path('../models/directory_entry', __FILE__)
 
+require File.expand_path('../models/metadata', __FILE__)
+
 require File.expand_path('../models/payment_method_types', __FILE__)
 require File.expand_path('../models/payment_method_type', __FILE__)
 
@@ -32,6 +34,9 @@ require File.expand_path('../models/customer', __FILE__)
 
 require File.expand_path('../models/payment_methods', __FILE__)
 require File.expand_path('../models/payment_method', __FILE__)
+
+require File.expand_path('../models/setup_intents', __FILE__)
+require File.expand_path('../models/setup_intent', __FILE__)
 
 require File.expand_path('../models/address', __FILE__)
 

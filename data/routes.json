@@ -76,5 +76,17 @@
     "path": "{version}/payment_methods/{id}/detach",
     "rel": "payment-method-detach",
     "templated": true
+  },
+  {
+    "name": "Setup Intents",
+    "path": "{version}/setup_intents",
+    "rel": "setup-intents",
+    "templated": true
+  },
+  {
+    "name": "Setup Intent",
+    "path": "{version}/setup_intents/{id}",
+    "rel": "setup-intent",
+    "templated": true
   }
 ]
