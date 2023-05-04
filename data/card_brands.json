@@ -1,0 +1,38 @@
+[
+  {
+    "id": "amex",
+    "description": "AMEX"
+  },
+  {
+    "id": "diners",
+    "description": "Diners"
+  },
+  {
+    "id": "discover",
+    "description": "Discover"
+  },
+  {
+    "id": "eftpos_au",
+    "description": "EFTPOS"
+  },
+  {
+    "id": "jcb",
+    "description": "JCB"
+  },
+  {
+    "id": "mastercard",
+    "description": "Mastercard"
+  },
+  {
+    "id": "unionpay",
+    "description": "Union Pay"
+  },
+  {
+    "id": "visa",
+    "description": "VISA"
+  },
+  {
+    "id": "unknown",
+    "description": "Unknown"
+  }
+]
