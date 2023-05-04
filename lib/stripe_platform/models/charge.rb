@@ -1,6 +1,12 @@
 module StripePlatform
   module Models
     class Charge
+      extend Forwardable
+
+      def_delegator :status, :succeeded?, :status_succeeded?
+      def_delegator :status, :pending?, :status_pending?
+      def_delegator :status, :failed?, :status_failed?
+
       # Returns an instance of the charge
       #
       # @param attributes [Hash]
@@ -76,6 +82,10 @@ module StripePlatform
 
       def status_value
         @attributes['status']
+      end
+
+      def status
+        @status ||= StripePlatform::Models::ChargeStatuses.retrieve(self.status_value)
       end
 
       def customer_id

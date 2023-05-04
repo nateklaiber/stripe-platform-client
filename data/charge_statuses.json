@@ -1,0 +1,14 @@
+[
+  {
+    "id": "succeeded",
+    "description": "Succeeded"
+  },
+  {
+    "id": "pending",
+    "description": "Pending"
+  },
+  {
+    "id": "failed",
+    "description": "Failed"
+  }
+]

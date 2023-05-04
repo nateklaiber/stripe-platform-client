@@ -41,6 +41,8 @@ require File.expand_path('../models/setup_intent', __FILE__)
 require File.expand_path('../models/payment_intents', __FILE__)
 require File.expand_path('../models/payment_intent', __FILE__)
 
+require File.expand_path('../models/charge_statuses', __FILE__)
+require File.expand_path('../models/charge_status', __FILE__)
 require File.expand_path('../models/charges', __FILE__)
 require File.expand_path('../models/charge', __FILE__)
 
