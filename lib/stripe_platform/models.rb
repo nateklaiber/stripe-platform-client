@@ -4,6 +4,9 @@ require File.expand_path('../models/directory_entry', __FILE__)
 require File.expand_path('../models/payment_method_types', __FILE__)
 require File.expand_path('../models/payment_method_type', __FILE__)
 
+require File.expand_path('../models/card_funding_types', __FILE__)
+require File.expand_path('../models/card_funding_type', __FILE__)
+
 require File.expand_path('../models/card_brands', __FILE__)
 require File.expand_path('../models/card_brand', __FILE__)
 

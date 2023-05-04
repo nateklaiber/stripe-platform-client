@@ -1,0 +1,18 @@
+[
+  {
+    "id": "credit",
+    "description": "Credit"
+  },
+  {
+    "id": "debit",
+    "description": "Debit"
+  },
+  {
+    "id": "prepaid",
+    "description": "Prepaid"
+  },
+  {
+    "id": "unknown",
+    "description": "Unknown"
+  }
+]
