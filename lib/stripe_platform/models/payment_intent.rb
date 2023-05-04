@@ -35,6 +35,14 @@ module StripePlatform
         @attributes['object']
       end
 
+      def refunds
+        StripePlatform::Models::Refunds.list(payment_intent: self.id)
+      end
+
+      def refunds?
+        self.refunds.any?
+      end
+
       def application
         @attributes['application']
       end
