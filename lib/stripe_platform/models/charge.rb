@@ -24,6 +24,14 @@ module StripePlatform
         @attributes['object']
       end
 
+      def refunds
+        StripePlatform::Models::Refunds.list(charge: self.id)
+      end
+
+      def refunds?
+        self.refunds.any?
+      end
+
       def balance_transaction_id
         @attributes['balance_transaction']
       end

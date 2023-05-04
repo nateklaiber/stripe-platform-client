@@ -121,7 +121,7 @@
   },
   {
     "name": "Refunds",
-    "path": "{version}/refunds",
+    "path": "{version}/refunds{?payment_intent_id,payment_intent,charge_id,charge}",
     "rel": "refunds",
     "templated": true
   },
