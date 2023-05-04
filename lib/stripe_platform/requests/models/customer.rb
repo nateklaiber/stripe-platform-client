@@ -48,6 +48,7 @@ module StripePlatform
         end
 
         def metadata
+          StripePlatform::Requests::Models::Metadata.new(self.metadata_attributes)
         end
 
         def address_attributes
@@ -65,6 +66,7 @@ module StripePlatform
             'phone'       => self.phone,
             'description' => self.description,
             'address'     => self.address.as_original_attributes,
+            'metadata'    => self.metadata.as_original_attributes,
           }
         end
 

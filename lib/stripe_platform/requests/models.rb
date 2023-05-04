@@ -1,3 +1,4 @@
+require File.expand_path('../models/metadata', __FILE__)
 require File.expand_path('../models/customer', __FILE__)
 require File.expand_path('../models/address', __FILE__)
 require File.expand_path('../models/payment_method', __FILE__)
