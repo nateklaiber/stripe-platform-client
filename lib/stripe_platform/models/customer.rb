@@ -135,7 +135,7 @@ module StripePlatform
       # @return [StripePlatform::Unit,NilClass]
       def balance_unit
         begin
-          StripePlatform::Unit.new(("%s %s" % [self.balance_decimal, self.currency_code.upcase]))
+          StripePlatform::Unit.new(("%s %s" % [self.balance_decimal, self.currency_code.to_s.upcase]))
         rescue => e
           StripePlatform::Client.logger.info do
             e.message
