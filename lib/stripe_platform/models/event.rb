@@ -1,8 +1,11 @@
 module StripePlatform
   module Models
     class Event
+      extend Forwardable
 
-      # Returns an instance of the charge
+      def_delegator :event_data, :object, :source
+
+      # Returns an instance of the event
       #
       # @param attributes [Hash]
       #
@@ -38,6 +41,14 @@ module StripePlatform
 
       def data_attributes
         Hash(@attributes.fetch('data', {}))
+      end
+
+      def event_data_attributes
+        self.data_attributes.merge!('type' => self.type_value)
+      end
+
+      def event_data
+        @event_data ||= StripePlatform::Models::EventData.new(self.event_data_attributes)
       end
 
       def is_livemode
