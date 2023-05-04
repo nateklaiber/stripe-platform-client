@@ -56,6 +56,9 @@ require File.expand_path('../models/refund_status', __FILE__)
 require File.expand_path('../models/refunds', __FILE__)
 require File.expand_path('../models/refund', __FILE__)
 
+require File.expand_path('../models/events', __FILE__)
+require File.expand_path('../models/event', __FILE__)
+
 require File.expand_path('../models/address', __FILE__)
 
 require File.expand_path('../models/billing_details', __FILE__)

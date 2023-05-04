@@ -136,5 +136,17 @@
     "path": "{version}/refunds/{refund_id}/cancel",
     "rel": "refund-cancel",
     "templated": true
+  },
+  {
+    "name": "Events",
+    "path": "{version}/events{?payment_intent,charge,ending_before,starting_after,limit}",
+    "rel": "events",
+    "templated": true
+  },
+  {
+    "name": "Event",
+    "path": "{version}/events/{id}",
+    "rel": "event",
+    "templated": true
   }
 ]
