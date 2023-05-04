@@ -1,0 +1,18 @@
+[
+  {
+    "id": "duplicate",
+    "description": "Duplicate"
+  },
+  {
+    "id": "fraudulent",
+    "description": "Fraudulent"
+  },
+  {
+    "id": "requested_by_customer",
+    "description": "Requested by Customer"
+  },
+  {
+    "id": "expired_uncaptured_charge",
+    "description": "Expired Uncaptured Charge"
+  }
+]

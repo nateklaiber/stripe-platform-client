@@ -23,6 +23,10 @@ require File.expand_path('../requests/payment_intents', __FILE__)
 require File.expand_path('../requests/charge_statuses', __FILE__)
 require File.expand_path('../requests/charges', __FILE__)
 
+require File.expand_path('../requests/refund_reasons', __FILE__)
+require File.expand_path('../requests/refund_statuses', __FILE__)
+require File.expand_path('../requests/refunds', __FILE__)
+
 module StripePlatform
   module Requests
   end

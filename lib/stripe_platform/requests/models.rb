@@ -6,6 +6,7 @@ require File.expand_path('../models/card', __FILE__)
 require File.expand_path('../models/billing_details', __FILE__)
 require File.expand_path('../models/setup_intent', __FILE__)
 require File.expand_path('../models/payment_intent', __FILE__)
+require File.expand_path('../models/refund', __FILE__)
 
 module StripePlatform
   module Requests

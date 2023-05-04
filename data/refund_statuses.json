@@ -1,0 +1,22 @@
+[
+  {
+    "id": "succeeded",
+    "description": "Succeeded"
+  },
+  {
+    "id": "pending",
+    "description": "Pending"
+  },
+  {
+    "id": "failed",
+    "description": "Failed"
+  },
+  {
+    "id": "requires_action",
+    "description": "Requires Action"
+  },
+  {
+    "id": "canceled",
+    "description": "Canceled"
+  }
+]

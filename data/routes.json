@@ -118,5 +118,23 @@
     "path": "{version}/charges/{charge_id}/capture",
     "rel": "charge-capture",
     "templated": true
+  },
+  {
+    "name": "Refunds",
+    "path": "{version}/refunds",
+    "rel": "refunds",
+    "templated": true
+  },
+  {
+    "name": "Refund",
+    "path": "{version}/refunds/{id}",
+    "rel": "refund",
+    "templated": true
+  },
+  {
+    "name": "Refund - Cancel",
+    "path": "{version}/refunds/{refund_id}/cancel",
+    "rel": "refund-cancel",
+    "templated": true
   }
 ]

@@ -209,6 +209,39 @@ module StripePlatform
         end
       end
 
+      # Returns the amount captured as an integer
+      #
+      # @return [Integer]
+      def amount_captured_integer
+        @attributes['amount_captured'].to_i
+      end
+
+      # Returns the amount captured as a decimal
+      #
+      # @return [BigDecimal,NilClass]
+      def amount_captured_decimal
+        begin
+          BigDecimal((self.amount_captured_integer.to_f / 100.0).to_s)
+        rescue
+          nil
+        end
+      end
+
+      # Returns the amount captured unit
+      #
+      # @return [StripePlatform::Unit]
+      def amount_captured_unit
+        begin
+          StripePlatform::Unit.new(("%s %s" % [self.amount_captured_decimal, self.currency_code.upcase]))
+        rescue => e
+          StripePlatform::Client.logger.info do
+            e.message
+          end
+
+          nil
+        end
+      end
+
       # Returns the created unix timestamp
       #
       # @return [Integer]
