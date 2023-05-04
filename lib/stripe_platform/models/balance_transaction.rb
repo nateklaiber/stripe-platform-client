@@ -26,6 +26,17 @@ module StripePlatform
         @attributes['source']
       end
 
+      def source
+        case(self.type_value)
+        when('charge')
+          StripePlatform::Models::Charges.retrieve(self.source_id)
+        end
+      end
+
+      def source?
+        !self.source.nil?
+      end
+
       # Returns the object type
       #
       # @return [String]

@@ -18,6 +18,8 @@ require File.expand_path('../requests/payment_methods', __FILE__)
 
 require File.expand_path('../requests/setup_intents', __FILE__)
 
+require File.expand_path('../requests/payment_intents', __FILE__)
+
 module StripePlatform
   module Requests
   end

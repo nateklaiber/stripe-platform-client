@@ -88,5 +88,17 @@
     "path": "{version}/setup_intents/{id}",
     "rel": "setup-intent",
     "templated": true
+  },
+  {
+    "name": "Payment Intents",
+    "path": "{version}/payment_intents",
+    "rel": "payment-intents",
+    "templated": true
+  },
+  {
+    "name": "Payment Intent",
+    "path": "{version}/payment_intents/{id}",
+    "rel": "payment-intent",
+    "templated": true
   }
 ]
