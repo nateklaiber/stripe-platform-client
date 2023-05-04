@@ -1,0 +1,122 @@
+[
+  {
+    "id": "price.created",
+    "description": "Occurs whenever a price is created."
+  },
+  {
+    "id": "price.deleted",
+    "description": "Occurs whenever a price is deleted."
+  },
+  {
+    "id": "price.updated",
+    "description": "Occurs whenever a price is updated"
+  },
+  {
+    "id": "product.created",
+    "description": "Occurs whenever a product is created."
+  },
+  {
+    "id": "product.deleted",
+    "description": "Occurs whenever a product is deleted."
+  },
+  {
+    "id": "product.updated",
+    "description": "Occurs whenever a product is updated."
+  },
+  {
+    "id": "plan.created",
+    "description": "Occurs whenever a plan is created."
+  },
+  {
+    "id": "plan.deleted",
+    "description": "Occurs whenever a plan is deleted."
+  },
+  {
+    "id": "plan.updated",
+    "description": "Occurs whenever a plan is updated."
+  },
+  {
+    "id": "balance.available",
+    "description": "Occurs whenever your Stripe balance has been updated (e.g., when a charge is available to be paid out). By default, Stripe automatically transfers funds in your balance to your bank account on a daily basis. This event is not fired for negative transactions."
+  },
+  {
+    "id": "charge.captured",
+    "description": "Occurs whenever a previously uncaptured charge is captured."
+  },
+  {
+    "id": "charge.dispute.created",
+    "description": "Occurs whenever a customer disputes a charge with their bank."
+  },
+  {
+    "id": "charge.dispute.closed",
+    "description": "Occurs when a dispute is closed and the dispute status changes to lost, warning_closed, or won."
+  },
+  {
+    "id": "charge.dispute.updated",
+    "description": "Occurs when the dispute is updated (usually with evidence)."
+  },
+  {
+    "id": "charge.expired",
+    "description": "Occurs whenever an uncaptured charge expires."
+  },
+  {
+    "id": "charge.failed",
+    "description": "Occurs whenever a failed charge attempt occurs."
+  },
+  {
+    "id": "charge.pending",
+    "description": "Occurs whenever a pending charge is created."
+  },
+  {
+    "id": "charge.refund.updated",
+    "description": "Occurs whenever a refund is updated, on selected payment methods."
+  },
+  {
+    "id": "charge.refunded",
+    "description": "Occurs whenever a charge is refunded, including partial refunds."
+  },
+  {
+    "id": "charge.succeeded",
+    "description": "Occurs whenever a charge is successful."
+  },
+  {
+    "id": "charge.updated",
+    "description": "Occurs whenever a charge description or metadata is updated, or upon an asynchronous capture."
+  },
+  {
+    "id": "coupon.created",
+    "description": "Occurs whenever a coupon is created."
+  },
+  {
+    "id": "coupon.deleted",
+    "description": "Occurs whenever a coupon is deleted."
+  },
+  {
+    "id": "coupon.updated",
+    "description": "Occurs whenever a coupon is updated."
+  },
+  {
+    "id": "credit_note.created",
+    "description": "Occurs whenever a credit note is created."
+  },
+  {
+    "id": "credit_note.updated",
+    "description": "Occurs whenever a credit note is updated."
+  },
+  {
+    "id": "credit_note.voided",
+    "description": "Occurs whenever a credit note is voided."
+  },
+  {
+    "id": "customer.created",
+    "description": "Occurs whenever a customer is created."
+  },
+  {
+    "id": "customer.deleted",
+    "description": "Occurs whenever a customer is deleted."
+  },
+  {
+    "id": "customer.updated",
+    "description": "Occurs whenever a customer is updated."
+  }
+]

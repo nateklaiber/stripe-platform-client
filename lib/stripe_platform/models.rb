@@ -3,6 +3,9 @@ require File.expand_path('../models/directory_entry', __FILE__)
 
 require File.expand_path('../models/metadata', __FILE__)
 
+require File.expand_path('../models/event_types', __FILE__)
+require File.expand_path('../models/event_type', __FILE__)
+
 require File.expand_path('../models/payment_method_types', __FILE__)
 require File.expand_path('../models/payment_method_type', __FILE__)
 
