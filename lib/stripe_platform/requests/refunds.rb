@@ -8,8 +8,10 @@ module StripePlatform
 
         params = default_query_params.merge!(params)
 
+        request_model = StripePlatform::Requests::Models::Refunds.new(params)
+
         route = StripePlatform::Client.routes.route_for('refunds')
-        url   = route.url_for(params)
+        url   = route.url_for(request_model.as_original_attributes)
 
         request = StripePlatform::Client.connection.get do |req|
           if block_given?
