@@ -132,6 +132,14 @@ module StripePlatform
         !self.payment_method.nil?
       end
 
+      def payment_method_details_attributes
+        Hash(@attributes.fetch('payment_method_details', {}))
+      end
+
+      def payment_method_details
+        StripePlatform::Models::PaymentMethodDetail.new(self.payment_method_details_attributes)
+      end
+
       def description
         @attributes['description']
       end

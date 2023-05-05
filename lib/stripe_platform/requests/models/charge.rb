@@ -42,7 +42,13 @@ module StripePlatform
           @attributes[:source_id]
         end
 
-        # TODO: Token Source
+        def source
+          @source ||= StripePlatform::Models::Tokens.retrieve(self.source_id)
+        end
+
+        def source?
+          !self.source.nil?
+        end
 
         def customer_id
           @attributes[:customer_id]
@@ -77,12 +83,15 @@ module StripePlatform
             'amount'      => self.amount,
             'currency'    => self.currency,
             'description' => self.description,
-            'source'      => self.source_id,
             'metadata'    => self.metadata.as_original_attributes,
           }
 
           if self.customer?
             attrs.merge!('customer' => self.customer.id)
+          end
+
+          if self.source?
+            attrs.merge!('source' => self.source.id)
           end
 
           attrs

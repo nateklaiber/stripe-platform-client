@@ -40,6 +40,7 @@ require File.expand_path('../models/customer', __FILE__)
 
 require File.expand_path('../models/payment_methods', __FILE__)
 require File.expand_path('../models/payment_method', __FILE__)
+require File.expand_path('../models/payment_method_detail', __FILE__)
 
 require File.expand_path('../models/setup_intents', __FILE__)
 require File.expand_path('../models/setup_intent', __FILE__)
