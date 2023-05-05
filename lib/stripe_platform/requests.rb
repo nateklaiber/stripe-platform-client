@@ -28,8 +28,10 @@ require File.expand_path('../requests/refund_statuses', __FILE__)
 require File.expand_path('../requests/refunds', __FILE__)
 
 require File.expand_path('../requests/event_types', __FILE__)
-
 require File.expand_path('../requests/events', __FILE__)
+
+require File.expand_path('../requests/token_types', __FILE__)
+require File.expand_path('../requests/tokens', __FILE__)
 
 module StripePlatform
   module Requests

@@ -148,5 +148,11 @@
     "path": "{version}/events/{id}",
     "rel": "event",
     "templated": true
+  },
+  {
+    "name": "Token",
+    "path": "{version}/tokens/{id}",
+    "rel": "token",
+    "templated": true
   }
 ]

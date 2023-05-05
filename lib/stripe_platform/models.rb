@@ -6,6 +6,9 @@ require File.expand_path('../models/metadata', __FILE__)
 require File.expand_path('../models/event_types', __FILE__)
 require File.expand_path('../models/event_type', __FILE__)
 
+require File.expand_path('../models/token_types', __FILE__)
+require File.expand_path('../models/token_type', __FILE__)
+
 require File.expand_path('../models/payment_method_types', __FILE__)
 require File.expand_path('../models/payment_method_type', __FILE__)
 
@@ -59,6 +62,9 @@ require File.expand_path('../models/refund', __FILE__)
 require File.expand_path('../models/events', __FILE__)
 require File.expand_path('../models/event', __FILE__)
 require File.expand_path('../models/event_data', __FILE__)
+
+require File.expand_path('../models/tokens', __FILE__)
+require File.expand_path('../models/token', __FILE__)
 
 require File.expand_path('../models/address', __FILE__)
 
