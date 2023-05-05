@@ -1,6 +1,7 @@
 require File.expand_path('../models/metadata', __FILE__)
 require File.expand_path('../models/customer', __FILE__)
 require File.expand_path('../models/address', __FILE__)
+require File.expand_path('../models/charge', __FILE__)
 require File.expand_path('../models/payment_method', __FILE__)
 require File.expand_path('../models/payment_methods', __FILE__)
 require File.expand_path('../models/card', __FILE__)
