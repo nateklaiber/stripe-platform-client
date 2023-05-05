@@ -10,12 +10,13 @@ module StripePlatform
           record_attributes = Hash(attributes)
 
           params = {
-            :amount      => record_attributes['amount'],
-            :currency    => record_attributes['currency'],
-            :description => record_attributes['description'],
-            :source_id   => record_attributes['source'],
-            :customer_id   => record_attributes['customer'],
-            :metadata    => record_attributes.fetch('metadata', {}),
+            :amount            => record_attributes['amount'],
+            :currency          => record_attributes['currency'],
+            :description       => record_attributes['description'],
+            :source_id         => record_attributes['source'],
+            :payment_method_id => record_attributes['payment_method'],
+            :customer_id       => record_attributes['customer'],
+            :metadata          => record_attributes.fetch('metadata', {}),
           }
 
           params
@@ -48,6 +49,18 @@ module StripePlatform
 
         def source?
           !self.source.nil?
+        end
+
+        def payment_method_id
+          @attributes[:payment_method_id]
+        end
+
+        def payment_method
+          @payment_method ||= StripePlatform::Models::PaymentMethods.retrieve(self.payment_method_id)
+        end
+
+        def payment_method?
+          !self.payment_method.nil?
         end
 
         def customer_id
@@ -92,6 +105,10 @@ module StripePlatform
 
           if self.source?
             attrs.merge!('source' => self.source.id)
+          end
+
+          if self.payment_method?
+            attrs.merge!('payment_method' => self.payment_method.id)
           end
 
           attrs
