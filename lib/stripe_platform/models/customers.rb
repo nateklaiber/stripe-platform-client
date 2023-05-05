@@ -96,6 +96,22 @@ module StripePlatform
         end
       end
 
+      def self.find_by_email_address(email_address)
+        request = StripePlatform::Requests::Customers.list(email: email_address, limit: 1)
+
+        request.on(:success) do |resp|
+          response_body    = resp.body
+          general_response = StripePlatform::Models::GeneralResponse.new(response_body)
+          customers        = self.new(general_response.data)
+
+          return customers.first
+        end
+
+        request.on(:failure) do |resp|
+          nil
+        end
+      end
+
       def each(&block)
         internal_collection.each(&block)
       end

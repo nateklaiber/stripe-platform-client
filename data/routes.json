@@ -25,7 +25,7 @@
   },
   {
     "name": "Customers",
-    "path": "{version}/customers",
+    "path": "{version}/customers{?email,ending_before,limit,starting_after,test_clock}",
     "rel": "customers",
     "templated": true
   },
