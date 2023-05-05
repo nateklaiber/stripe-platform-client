@@ -8,8 +8,10 @@ module StripePlatform
 
         params = default_query_params.merge!(params)
 
+        request_model = StripePlatform::Requests::Models::PaymentMethods.new(params)
+
         route = StripePlatform::Client.routes.route_for('payment-methods')
-        url   = route.url_for(params)
+        url   = route.url_for(request_model.as_original_attributes)
 
         request = StripePlatform::Client.connection.get do |req|
           if block_given?

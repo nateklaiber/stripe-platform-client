@@ -55,6 +55,10 @@ module StripePlatform
         Hash(@attributes.fetch('card', {}))
       end
 
+      def source
+        self.type.object_for(self.card_attributes)
+      end
+
       def card
         @card ||= StripePlatform::Models::Card.new(self.card_attributes)
       end
@@ -62,7 +66,6 @@ module StripePlatform
       def card?
         !self.card.nil?
       end
-
 
       # Returns the created unix timestamp
       #

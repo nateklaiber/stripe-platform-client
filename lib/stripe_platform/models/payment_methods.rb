@@ -29,7 +29,7 @@ module StripePlatform
         end
 
         request.on(:failure) do |resp|
-          return nil
+          return self.new([])
         end
       end
 
@@ -93,6 +93,21 @@ module StripePlatform
 
         request.on(:failure) do |resp|
           return nil
+        end
+      end
+
+      def self.list_by_customer_id(customer_id)
+        request = StripePlatform::Requests::PaymentMethods.list(customer_id: customer_id)
+
+        request.on(:success) do |resp|
+          response_body    = resp.body
+          general_response = StripePlatform::Models::GeneralResponse.new(response_body)
+
+          return self.new(general_response.data)
+        end
+
+        request.on(:failure) do |resp|
+          return self.new([])
         end
       end
 

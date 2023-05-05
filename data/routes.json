@@ -55,7 +55,7 @@
   },
   {
     "name": "Payment Methods",
-    "path": "{version}/payment_methods",
+    "path": "{version}/payment_methods{?customer,ending_before,limit,starting_after}",
     "rel": "payment-methods",
     "templated": true
   },

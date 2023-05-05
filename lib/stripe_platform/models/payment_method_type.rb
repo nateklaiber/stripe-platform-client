@@ -25,6 +25,13 @@ module StripePlatform
         @attributes['description']
       end
 
+      def object_for(record_attributes)
+        case(self.id)
+        when('card')
+          StripePlatform::Models::Card.new(record_attributes)
+        end
+      end
+
       # Returns true if this is a card
       #
       # @return [Boolean]

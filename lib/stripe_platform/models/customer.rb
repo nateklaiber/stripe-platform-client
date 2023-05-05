@@ -12,6 +12,20 @@ module StripePlatform
         @attributes = Hash(attributes)
       end
 
+      # Returns the associated payment methods
+      #
+      # @return [StripePlatform::Models::PaymentMethods]
+      def payment_methods
+        @payment_methods ||= StripePlatform::Models::PaymentMethods.list_by_customer_id(self.id)
+      end
+
+      # Returns true if there are any payment methods
+      #
+      # @return [Boolean]
+      def payment_methods?
+        self.payment_methods.any?
+      end
+
       # Returns the id
       #
       # @return [String]
