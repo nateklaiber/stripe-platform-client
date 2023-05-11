@@ -39,6 +39,63 @@ module StripePlatform
         !self.product.nil?
       end
 
+      def nickname
+        @attributes['nickname']
+      end
+
+      def tiers_mode_value
+        @attributes['tiers_mode']
+      end
+      alias tiers_mode_id tiers_mode_value
+
+      def tiers_mode
+        @tiers_mode ||= StripePlatform::Models::PricingTiersModes.retrieve(self.tiers_mode_value)
+      end
+      alias pricing_tiers_mode tiers_mode
+
+      def tiers_mode?
+        !self.tiers_mode.nil?
+      end
+      alias pricing_tiers_mode? tiers_mode?
+
+      def tiers_attributes
+        Array(@attributes.fetch('tiers', []))
+      end
+
+      def resolved_tiers_attributes
+        self.tiers_attributes.map { |r| r.merge!('tiers_mode' => self.tiers_mode_value, 'currency' => self.currency_code) }
+      end
+
+      def tiers
+        @tiers ||= StripePlatform::Models::PricingTiers.new(self.resolved_tiers_attributes)
+      end
+      alias pricing_tiers tiers
+
+      def tiers?
+        self.tiers.any?
+      end
+      alias pricing_tiers? tiers?
+
+      def transform_usage_attributes
+        Hash(@attributes.fetch('transform_usage', {}))
+      end
+
+      def transform_usage
+        @transform_usage ||= StripePlatform::Models::TransformUsage.new(self.transform_usage_attributes)
+      end
+
+      def transform_usage?
+        self.transform_usage.any?
+      end
+
+      def trial_period_days
+        @attributes['trial_period_days']
+      end
+
+      def usage_type
+        @attributes['usage_type']
+      end
+
       # Returns the currency code
       #
       # @return [String]
@@ -46,9 +103,15 @@ module StripePlatform
         @attributes['currency']
       end
 
-      def interval
+      def interval_value
         @attributes['interval']
       end
+      alias interval_id interval_value
+
+      def interval
+        @interval ||= StripePlatform::Models::BillingIntervals.retrieve(self.interval_value)
+      end
+      alias billing_interval interval
 
       def interval_count
         @attributes['interval_count']
@@ -111,6 +174,12 @@ module StripePlatform
       def created_at?
         !self.created_at.nil?
       end
+
+      def is_active
+        @attributes['active']
+      end
+      alias is_active? is_active
+      alias active? is_active
 
       # Returns the original attributes
       #

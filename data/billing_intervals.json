@@ -1,0 +1,18 @@
+[
+  {
+    "id": "month",
+    "description": "Month"
+  },
+  {
+    "id": "year",
+    "description": "Year"
+  },
+  {
+    "id": "week",
+    "description": "Week"
+  },
+  {
+    "id": "day",
+    "description": "Day"
+  }
+]

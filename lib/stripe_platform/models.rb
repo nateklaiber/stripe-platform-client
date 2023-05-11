@@ -76,6 +76,20 @@ require File.expand_path('../models/card', __FILE__)
 require File.expand_path('../models/plans', __FILE__)
 require File.expand_path('../models/plan', __FILE__)
 
+require File.expand_path('../models/billing_intervals', __FILE__)
+require File.expand_path('../models/billing_interval', __FILE__)
+
+require File.expand_path('../models/round_directions', __FILE__)
+require File.expand_path('../models/round_direction', __FILE__)
+
+require File.expand_path('../models/pricing_tiers_modes', __FILE__)
+require File.expand_path('../models/pricing_tiers_mode', __FILE__)
+
+require File.expand_path('../models/pricing_tiers', __FILE__)
+require File.expand_path('../models/pricing_tier', __FILE__)
+
+require File.expand_path('../models/transform_usage', __FILE__)
+
 module StripePlatform
   module Models
   end
