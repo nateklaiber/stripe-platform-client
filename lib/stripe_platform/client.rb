@@ -19,6 +19,7 @@ require_relative 'unit'
 require_relative 'timezone'
 require_relative 'resource_io'
 require_relative 'resource_uri'
+require_relative 'tiers_transformer'
 
 require_relative 'errors'
 require_relative 'extensions'

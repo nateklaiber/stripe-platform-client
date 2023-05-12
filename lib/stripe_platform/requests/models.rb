@@ -12,6 +12,7 @@ require File.expand_path('../models/refund', __FILE__)
 require File.expand_path('../models/refunds', __FILE__)
 require File.expand_path('../models/timestamp_query', __FILE__)
 require File.expand_path('../models/plans', __FILE__)
+require File.expand_path('../models/products', __FILE__)
 
 module StripePlatform
   module Requests

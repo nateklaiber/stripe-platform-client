@@ -15,6 +15,10 @@ module StripePlatform
         @attributes['id']
       end
 
+      def type_value
+        @attributes['type']
+      end
+
       def object
         @attributes['object']
       end
@@ -57,10 +61,72 @@ module StripePlatform
         @attributes['name']
       end
 
-      def package_dimensions
+      def statement_descriptor
+        @attributes['statement_descriptor']
+      end
+
+      def unit_label
+        @attributes['unit_label']
+      end
+
+      def package_dimensions_attributes
         @attributes['package_dimensions']
       end
 
+      def package_dimensions
+        @package_dimensions ||= StripePlatform::Models::PackageDimension.new(self.package_dimensions_attributes)
+      end
+
+      def is_shippable
+        @attributes['shippable']
+      end
+      alias is_shippable? is_shippable
+      alias shippable? is_shippable
+
+      def url_value
+        @attributes['url']
+      end
+
+      def url
+        begin
+          @url ||= StripePlatform::ResourceUri.new(self.url_value)
+        rescue
+          nil
+        end
+      end
+
+      def url?
+        !self.url.nil?
+      end
+
+      def tax_code_value
+        @attributes['tax_code']
+      end
+
+      # Returns the updated unix timestamp
+      #
+      # @return [Integer]
+      def updated_unix_timestamp
+        @attributes['updated']
+      end
+
+      # Returns the updated at time
+      #
+      # @return [Time,NilClass]
+      def updated_at
+        begin
+          Time.at(self.updated_unix_timestamp).utc
+        rescue
+          nil
+        end
+      end
+
+      # Returns true if there is a updated at
+      #
+      # @return [Boolean]
+      def updated_at?
+        !self.updated_at.nil?
+      end
 
       # Returns the created unix timestamp
       #
