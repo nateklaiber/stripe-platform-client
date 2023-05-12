@@ -11,6 +11,7 @@ module StripePlatform
 
           params = {
             :version           => record_attributes['version'],
+            :expand            => record_attributes.fetch('expand', []),
             :created           => record_attributes.fetch('created', {}),
             :ending_before     => record_attributes['ending_before'],
             :starting_after    => record_attributes['starting_after'],
@@ -49,6 +50,14 @@ module StripePlatform
           @created ||= StripePlatform::Requests::Models::TimestampQuery.new(self.created_attributes)
         end
 
+        def expand_attributes
+          Array(@attributes.fetch(:expand, []))
+        end
+
+        def expand_attributes?
+          self.expand_attributes.any?
+        end
+
         def as_original_attributes
           attrs = {
             'version'        => self.version,
@@ -57,6 +66,10 @@ module StripePlatform
             'limit'          => self.limit,
             #'created'        => self.created.as_original_attributes,
           }
+
+          if self.expand_attributes?
+            attrs.merge!('expand' => self.expand_attributes)
+          end
 
           attrs
         end

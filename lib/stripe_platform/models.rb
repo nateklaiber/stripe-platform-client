@@ -88,6 +88,9 @@ require File.expand_path('../models/pricing_tiers_mode', __FILE__)
 require File.expand_path('../models/pricing_tiers', __FILE__)
 require File.expand_path('../models/pricing_tier', __FILE__)
 
+require File.expand_path('../models/billing_schemes', __FILE__)
+require File.expand_path('../models/billing_scheme', __FILE__)
+
 require File.expand_path('../models/transform_usage', __FILE__)
 
 module StripePlatform

@@ -15,6 +15,10 @@ module StripePlatform
         Array(self.map(&:to_attributes))
       end
 
+      def find_for_quantity(quantity)
+        self.find { |record| record.matches_for_quantity?(quantity) }
+      end
+
       private
       def internal_collection
         @collection.map { |record| StripePlatform::Models::PricingTier.new(record) }

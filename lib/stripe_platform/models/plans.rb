@@ -54,8 +54,8 @@ module StripePlatform
         end
       end
 
-      def self.retrieve(id, &block)
-        request = StripePlatform::Requests::Plans.retrieve(id, &block)
+      def self.retrieve(id, params={}, &block)
+        request = StripePlatform::Requests::Plans.retrieve(id, params, &block)
 
         request.on(:success) do |resp|
           response_body = resp.body

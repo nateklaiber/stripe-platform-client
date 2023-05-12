@@ -38,6 +38,7 @@ require File.expand_path('../requests/tokens', __FILE__)
 require File.expand_path('../requests/billing_intervals', __FILE__)
 require File.expand_path('../requests/round_directions', __FILE__)
 require File.expand_path('../requests/pricing_tiers_modes', __FILE__)
+require File.expand_path('../requests/billing_schemes', __FILE__)
 
 module StripePlatform
   module Requests

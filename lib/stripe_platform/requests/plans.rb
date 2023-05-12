@@ -66,8 +66,10 @@ module StripePlatform
 
         params = default_query_params.merge!(params)
 
+        request_model = StripePlatform::Requests::Models::Plans.new(params)
+
         route = StripePlatform::Client.routes.route_for('plan')
-        url   = route.url_for(params.merge!(id: id))
+        url   = route.url_for(request_model.as_original_attributes.merge!(id: id))
 
         request = StripePlatform::Client.connection.get do |req|
           if block_given?

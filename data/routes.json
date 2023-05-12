@@ -157,13 +157,13 @@
   },
   {
     "name": "Plans",
-    "path": "{version}/plans{?active,product,ending_before,starting_after,limit,created}",
+    "path": "{version}/plans{?active,product,ending_before,starting_after,limit,created,expand*}",
     "rel": "plans",
     "templated": true
   },
   {
     "name": "Plan",
-    "path": "{version}/plans/{id}",
+    "path": "{version}/plans/{id}{?expand*}",
     "rel": "plan",
     "templated": true
   }
