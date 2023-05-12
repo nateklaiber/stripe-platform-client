@@ -43,6 +43,19 @@ module StripePlatform
         @attributes['nickname']
       end
 
+      def aggregate_usage_value
+        @attributes['aggregate_usage']
+      end
+      alias aggregate_usage_id aggregate_usage_value
+
+      def aggregate_usage
+        @aggregate_usage ||= StripePlatform::Models::AggregateUsageTypes.retrieve(self.aggregate_usage_value)
+      end
+
+      def aggregate_usage?
+        !self.aggregate_usage.nil?
+      end
+
       def billing_scheme_value
         @attributes['billing_scheme']
       end

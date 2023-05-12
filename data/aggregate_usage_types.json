@@ -1,0 +1,22 @@
+[
+  {
+    "id": "sum",
+    "description": "Sum up all usage during a period.",
+    "is_default": true
+  },
+  {
+    "id": "last_during_period",
+    "description": "Use the last usage record reported within a period.",
+    "is_default": false
+  },
+  {
+    "id": "last_ever",
+    "description": "Use the last usage record ever (across period bounds).",
+    "is_default": false
+  },
+  {
+    "id": "max",
+    "description": "Use the usage record with the maximum reported usage during a preiod.",
+    "is_default": false
+  }
+]
