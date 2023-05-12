@@ -54,7 +54,7 @@ module StripePlatform
       end
 
       def product
-        if self.product_attributes?
+        @product ||= if self.product_attributes?
           StripePlatform::Models::Product.new(self.product_attributes)
         else
           StripePlatform::Models::Products.retrieve(self.product_id)

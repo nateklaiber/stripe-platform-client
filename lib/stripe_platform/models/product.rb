@@ -45,8 +45,28 @@ module StripePlatform
         !self.default_price_id.nil?
       end
 
+      def default_price_attributes
+        if self.default_price_value.is_a?(Hash)
+          Hash(self.default_price_value)
+        else
+          {}
+        end
+      end
+
+      def default_price_attributes?
+        !self.default_price_attributes.empty?
+      end
+
       def default_price
-        # @todo
+        @default_price ||= if self.default_price_attributes?
+          StripePlatform::Models::Price.new(self.default_price_attributes)
+        else
+          StripePlatform::Models::Prices.retrieve(self.default_price_id)
+        end
+      end
+
+      def default_price?
+        !self.default_price.nil?
       end
 
       def description
