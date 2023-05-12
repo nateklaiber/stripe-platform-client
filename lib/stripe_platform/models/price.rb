@@ -1,6 +1,6 @@
 module StripePlatform
   module Models
-    class Plan
+    class Price
 
       # Returns an instance of the charge
       #
@@ -69,27 +69,6 @@ module StripePlatform
         @attributes['nickname']
       end
 
-      def recurring_attributes
-        @attributes.slice('aggregate_usage', 'interval', 'interval_count', 'trial_period_days', 'usage_type')
-      end
-
-      def recurring
-        @recurring ||= StripePlatform::Models::RecurringProfile.new(self.recurring_attributes)
-      end
-
-      def aggregate_usage_value
-        @attributes['aggregate_usage']
-      end
-      alias aggregate_usage_id aggregate_usage_value
-
-      def aggregate_usage
-        @aggregate_usage ||= StripePlatform::Models::AggregateUsageTypes.retrieve(self.aggregate_usage_value)
-      end
-
-      def aggregate_usage?
-        !self.aggregate_usage.nil?
-      end
-
       def billing_scheme_value
         @attributes['billing_scheme']
       end
@@ -101,6 +80,32 @@ module StripePlatform
 
       def billing_scheme?
         !self.billing_scheme.nil?
+      end
+
+      def tax_behavior_value
+        @attributes['tax_behavior']
+      end
+      alias tax_behavior_id tax_behavior_value
+
+      def tax_behavior
+        @tax_behavior ||= StripePlatform::Models::TaxBehaviors.retrieve(self.tax_behavior_value)
+      end
+
+      def tax_behavior?
+        !self.tax_behavior.nil?
+      end
+
+      def type_value
+        @attributes['type']
+      end
+      alias type_id type_value
+
+      def type
+        @type ||= StripePlatform::Models::PriceTypes.retrieve(self.type_value)
+      end
+
+      def type?
+        !self.type.nil?
       end
 
       def tiers_mode_value
@@ -140,33 +145,16 @@ module StripePlatform
       end
       alias pricing_tiers? tiers?
 
-      def transform_usage_attributes
-        Hash(@attributes.fetch('transform_usage', {}))
+      def transform_quantity_attributes
+        Hash(@attributes.fetch('transform_quantity', {}))
       end
 
-      def transform_usage
-        @transform_usage ||= StripePlatform::Models::TransformUsage.new(self.transform_usage_attributes)
+      def transform_quantity
+        @transform_quantity ||= StripePlatform::Models::TransformUsage.new(self.transform_usage_attributes)
       end
 
       def transform_usage?
         self.transform_usage.any?
-      end
-
-      def trial_period_days
-        @attributes['trial_period_days']
-      end
-
-      def usage_type_value
-        @attributes['usage_type']
-      end
-      alias usage_type_id usage_type_value
-
-      def usage_type
-        @usage_type ||= StripePlatform::Models::PlanUsageTypes.retrieve(self.usage_type_value)
-      end
-
-      def usage_type?
-        !self.usage_type.nil?
       end
 
       # Returns the currency code
@@ -174,6 +162,14 @@ module StripePlatform
       # @return [String]
       def currency_code
         @attributes['currency']
+      end
+
+      def recurring_attributes
+        Hash(@attributes.fetch('recurring', {}))
+      end
+
+      def recurring
+        @recurring ||= StripePlatform::Models::RecurringProfile.new(self.recurring_attributes)
       end
 
       def interval_value
@@ -190,34 +186,34 @@ module StripePlatform
         @attributes['interval_count']
       end
 
-      def amount
-        @attributes['amount']
+      def unit_amount
+        @attributes['unit_amount']
       end
 
-      # Returns the amount as an integer
+      # Returns the unit amount as an integer
       #
       # @return [Integer]
-      def amount_integer
-        @attributes['amount'].to_i
+      def unit_amount_integer
+        @attributes['unit_amount'].to_i
       end
 
-      # Returns the amount as a decimal
+      # Returns the unit amount as a decimal
       #
       # @return [BigDecimal,NilClass]
-      def amount_decimal
+      def unit_amount_decimal
         begin
-          BigDecimal((self.amount_integer.to_f / 100.0).to_s)
+          BigDecimal((self.unit_amount_integer.to_f / 100.0).to_s)
         rescue
           nil
         end
       end
 
-      # Returns the amount unit
+      # Returns the unit amount unit
       #
       # @return [StripePlatform::Unit]
-      def amount_unit
+      def unit_amount_unit
         begin
-          StripePlatform::Unit.new(("%s %s" % [self.amount_decimal, self.currency_code.upcase]))
+          StripePlatform::Unit.new(("%s %s" % [self.unit_amount_decimal, self.currency_code.upcase]))
         rescue => e
           StripePlatform::Client.logger.info do
             e.message

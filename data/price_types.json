@@ -1,0 +1,10 @@
+[
+  {
+    "id": "one_time",
+    "description": "For a one-time purchase."
+  },
+  {
+    "id": "recurring",
+    "description": "For a recurring (subscription) purchase."
+  }
+]

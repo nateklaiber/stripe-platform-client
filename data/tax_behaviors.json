@@ -1,0 +1,14 @@
+[
+  {
+    "id": "inclusive",
+    "description": "Inclusive"
+  },
+  {
+    "id": "exclusive",
+    "description": "Exclusive"
+  },
+  {
+    "id": "unspecified",
+    "description": "Unspecified"
+  }
+]

@@ -178,5 +178,17 @@
     "path": "{version}/products/{id}{?expand*}",
     "rel": "product",
     "templated": true
+  },
+  {
+    "name": "Prices",
+    "path": "{version}/prices{?active,currency,product,type,ending_before,starting_after,limit,created,expand*}",
+    "rel": "prices",
+    "templated": true
+  },
+  {
+    "name": "Price",
+    "path": "{version}/prices/{id}{?expand*}",
+    "rel": "price",
+    "templated": true
   }
 ]

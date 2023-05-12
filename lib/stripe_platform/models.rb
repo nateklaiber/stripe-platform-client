@@ -91,8 +91,17 @@ require File.expand_path('../models/pricing_tiers_mode', __FILE__)
 require File.expand_path('../models/pricing_tiers', __FILE__)
 require File.expand_path('../models/pricing_tier', __FILE__)
 
+require File.expand_path('../models/prices', __FILE__)
+require File.expand_path('../models/price', __FILE__)
+
 require File.expand_path('../models/billing_schemes', __FILE__)
 require File.expand_path('../models/billing_scheme', __FILE__)
+
+require File.expand_path('../models/tax_behaviors', __FILE__)
+require File.expand_path('../models/tax_behavior', __FILE__)
+
+require File.expand_path('../models/price_types', __FILE__)
+require File.expand_path('../models/price_type', __FILE__)
 
 require File.expand_path('../models/aggregate_usage_types', __FILE__)
 require File.expand_path('../models/aggregate_usage_type', __FILE__)
@@ -101,6 +110,8 @@ require File.expand_path('../models/plan_usage_types', __FILE__)
 require File.expand_path('../models/plan_usage_type', __FILE__)
 
 require File.expand_path('../models/transform_usage', __FILE__)
+
+require File.expand_path('../models/recurring_profile', __FILE__)
 
 require File.expand_path('../models/package_dimension', __FILE__)
 

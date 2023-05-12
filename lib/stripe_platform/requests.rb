@@ -18,6 +18,8 @@ require File.expand_path('../requests/plans', __FILE__)
 
 require File.expand_path('../requests/products', __FILE__)
 
+require File.expand_path('../requests/prices', __FILE__)
+
 require File.expand_path('../requests/payment_methods', __FILE__)
 
 require File.expand_path('../requests/setup_intents', __FILE__)
@@ -43,6 +45,8 @@ require File.expand_path('../requests/pricing_tiers_modes', __FILE__)
 require File.expand_path('../requests/billing_schemes', __FILE__)
 require File.expand_path('../requests/aggregate_usage_types', __FILE__)
 require File.expand_path('../requests/plan_usage_types', __FILE__)
+require File.expand_path('../requests/tax_behaviors', __FILE__)
+require File.expand_path('../requests/price_types', __FILE__)
 
 module StripePlatform
   module Requests
