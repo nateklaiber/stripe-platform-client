@@ -166,5 +166,17 @@
     "path": "{version}/plans/{id}{?expand*}",
     "rel": "plan",
     "templated": true
+  },
+  {
+    "name": "Products",
+    "path": "{version}/products{?active,ids,shippable,url,ending_before,starting_after,limit,created,expand*}",
+    "rel": "products",
+    "templated": true
+  },
+  {
+    "name": "Product",
+    "path": "{version}/products/{id}{?expand*}",
+    "rel": "product",
+    "templated": true
   }
 ]

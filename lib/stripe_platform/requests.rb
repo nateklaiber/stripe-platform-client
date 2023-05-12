@@ -16,6 +16,8 @@ require File.expand_path('../requests/customers', __FILE__)
 
 require File.expand_path('../requests/plans', __FILE__)
 
+require File.expand_path('../requests/products', __FILE__)
+
 require File.expand_path('../requests/payment_methods', __FILE__)
 
 require File.expand_path('../requests/setup_intents', __FILE__)

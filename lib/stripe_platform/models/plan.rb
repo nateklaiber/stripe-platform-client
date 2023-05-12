@@ -27,12 +27,38 @@ module StripePlatform
         @metadata ||= StripePlatform::Models::Metadata.new(self.metadata_attributes)
       end
 
-      def product_id
+      def product_value
         @attributes['product']
       end
 
+      def product_attributes
+        if self.product_value.is_a?(Hash)
+          Hash(self.product_value)
+        else
+          {}
+        end
+      end
+
+      def product_attributes?
+        !self.product_attributes.empty?
+      end
+
+      def product_id
+        if self.product_value.is_a?(String)
+          self.product_value
+        end
+      end
+
+      def product_id?
+        !self.product_id.nil?
+      end
+
       def product
-        StripePlatform::Models::Products.retrieve(self.product_id)
+        if self.product_attributes?
+          StripePlatform::Models::Product.new(self.product_attributes)
+        else
+          StripePlatform::Models::Products.retrieve(self.product_id)
+        end
       end
 
       def product?
@@ -214,6 +240,10 @@ module StripePlatform
         @attributes['interval_count']
       end
 
+      def amount
+        @attributes['amount']
+      end
+
       # Returns the amount as an integer
       #
       # @return [Integer]
@@ -277,6 +307,12 @@ module StripePlatform
       end
       alias is_active? is_active
       alias active? is_active
+
+      def is_livemode
+        @attributes['livemode']
+      end
+      alias is_livemode? is_livemode
+      alias livemode? is_livemode
 
       # Returns the original attributes
       #
