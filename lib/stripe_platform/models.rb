@@ -94,6 +94,9 @@ require File.expand_path('../models/billing_scheme', __FILE__)
 require File.expand_path('../models/aggregate_usage_types', __FILE__)
 require File.expand_path('../models/aggregate_usage_type', __FILE__)
 
+require File.expand_path('../models/plan_usage_types', __FILE__)
+require File.expand_path('../models/plan_usage_type', __FILE__)
+
 require File.expand_path('../models/transform_usage', __FILE__)
 
 module StripePlatform

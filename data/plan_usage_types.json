@@ -1,0 +1,12 @@
+[
+  {
+    "id": "metered",
+    "description": "Aggregates the total usage based on usage records.",
+    "is_default": false
+  },
+  {
+    "id": "licensed",
+    "description": "Automatically bills the quantity set when adding it to a subscription.",
+    "is_default": true
+  }
+]

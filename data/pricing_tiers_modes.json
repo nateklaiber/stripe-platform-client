@@ -1,10 +1,10 @@
 [
   {
     "id": "graduated",
-    "description": "Graduated"
+    "description": "Pricing can change as quantity grows."
   },
   {
     "id": "volume",
-    "description": "Volume"
+    "description": "The maximum quantity within a period determines the perunit price."
   }
 ]

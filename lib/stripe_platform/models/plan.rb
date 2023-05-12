@@ -180,8 +180,17 @@ module StripePlatform
         @attributes['trial_period_days']
       end
 
-      def usage_type
+      def usage_type_value
         @attributes['usage_type']
+      end
+      alias usage_type_id usage_type_value
+
+      def usage_type
+        @usage_type ||= StripePlatform::Models::PlanUsageTypes.retrieve(self.usage_type_value)
+      end
+
+      def usage_type?
+        !self.usage_type.nil?
       end
 
       # Returns the currency code
