@@ -76,6 +76,11 @@ require File.expand_path('../models/card', __FILE__)
 require File.expand_path('../models/plans', __FILE__)
 require File.expand_path('../models/plan', __FILE__)
 
+require File.expand_path('../models/subscription_statuses', __FILE__)
+require File.expand_path('../models/subscription_status', __FILE__)
+require File.expand_path('../models/subscriptions', __FILE__)
+require File.expand_path('../models/subscription', __FILE__)
+
 require File.expand_path('../models/products', __FILE__)
 require File.expand_path('../models/product', __FILE__)
 

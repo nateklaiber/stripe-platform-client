@@ -190,5 +190,17 @@
     "path": "{version}/prices/{id}{?expand*}",
     "rel": "price",
     "templated": true
+  },
+  {
+    "name": "Subscriptions",
+    "path": "{version}/subscriptions{?status,price,customer,collection_method,current_period_start,current_period_end,ending_before,starting_after,limit,created,expand*}",
+    "rel": "subscriptions",
+    "templated": true
+  },
+  {
+    "name": "Subscription",
+    "path": "{version}/subscriptions/{id}{?expand*}",
+    "rel": "subscription",
+    "templated": true
   }
 ]

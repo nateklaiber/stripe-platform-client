@@ -55,10 +55,10 @@ module StripePlatform
 
       def product
         @product ||= if self.product_attributes?
-          StripePlatform::Models::Product.new(self.product_attributes)
-        else
-          StripePlatform::Models::Products.retrieve(self.product_id)
-        end
+                       StripePlatform::Models::Product.new(self.product_attributes)
+                     else
+                       StripePlatform::Models::Products.retrieve(self.product_id)
+                     end
       end
 
       def product?

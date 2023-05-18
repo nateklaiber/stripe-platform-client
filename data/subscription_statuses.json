@@ -1,0 +1,42 @@
+[
+  {
+    "id": "active",
+    "description": "Active"
+  },
+  {
+    "id": "past_due",
+    "description": "Past Due"
+  },
+  {
+    "id": "unpaid",
+    "description": "Unpaid"
+  },
+  {
+    "id": "canceled",
+    "description": "Canceled"
+  },
+  {
+    "id": "incomplete",
+    "description": "Incomplete"
+  },
+  {
+    "id": "incomplete_expired",
+    "description": "Incomplete Expired"
+  },
+  {
+    "id": "trialing",
+    "description": "Trialing"
+  },
+  {
+    "id": "paused",
+    "description": "Paused"
+  },
+  {
+    "id": "ended",
+    "description": "Ended"
+  },
+  {
+    "id": "all",
+    "description": "All"
+  }
+]
