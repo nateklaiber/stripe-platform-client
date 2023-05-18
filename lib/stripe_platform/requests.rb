@@ -21,6 +21,8 @@ require File.expand_path('../requests/subscriptions', __FILE__)
 
 require File.expand_path('../requests/subscription_items', __FILE__)
 
+require File.expand_path('../requests/coupon_durations', __FILE__)
+
 require File.expand_path('../requests/invoice_statuses', __FILE__)
 require File.expand_path('../requests/invoices', __FILE__)
 
@@ -29,6 +31,8 @@ require File.expand_path('../requests/invoice_items', __FILE__)
 require File.expand_path('../requests/products', __FILE__)
 
 require File.expand_path('../requests/prices', __FILE__)
+
+require File.expand_path('../requests/coupons', __FILE__)
 
 require File.expand_path('../requests/payment_methods', __FILE__)
 

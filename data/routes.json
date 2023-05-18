@@ -238,5 +238,17 @@
     "path": "{version}/invoiceitems/{id}{?expand*}",
     "rel": "invoice-item",
     "templated": true
+  },
+  {
+    "name": "Coupons",
+    "path": "{version}/coupons{?created,limit,ending_before,starting_after,expand*}",
+    "rel": "coupons",
+    "templated": true
+  },
+  {
+    "name": "Coupon",
+    "path": "{version}/coupons/{id}{?expand*}",
+    "rel": "coupon",
+    "templated": true
   }
 ]

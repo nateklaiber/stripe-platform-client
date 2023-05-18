@@ -1,0 +1,14 @@
+[
+  {
+    "id": "forever",
+    "description": "Forever"
+  },
+  {
+    "id": "once",
+    "description": "Once"
+  },
+  {
+    "id": "repeating",
+    "description": "Forever"
+  }
+]
