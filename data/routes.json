@@ -202,5 +202,17 @@
     "path": "{version}/subscriptions/{id}{?expand*}",
     "rel": "subscription",
     "templated": true
+  },
+  {
+    "name": "Invoices",
+    "path": "{version}/invoices{?customer,status,subscription,collection_method,created,due_date,ending_before,limit,starting_after,expand*}",
+    "rel": "invoices",
+    "templated": true
+  },
+  {
+    "name": "Invoice",
+    "path": "{version}/invoices/{id}{?expand*}",
+    "rel": "invoice",
+    "templated": true
   }
 ]

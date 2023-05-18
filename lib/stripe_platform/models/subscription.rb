@@ -9,11 +9,6 @@ module StripePlatform
       def_delegator :collection_method, :charge_automatically?
       def_delegator :collection_method, :send_invoice?
 
-      # Returns an instance of the charge
-      #
-      # @param attributes [Hash]
-      #
-      # @return [StripePlatform::Models::Refund]
       def initialize(attributes={})
         @attributes = Hash(attributes)
       end
@@ -72,6 +67,7 @@ module StripePlatform
         Hash(@attributes.fetch('items', {}))
       end
 
+
       def customer_value
         @attributes['customer']
       end
@@ -108,6 +104,44 @@ module StripePlatform
 
       def customer?
         !self.customer.nil?
+      end
+
+      def latest_invoice_value
+        @attributes['latest_invoice']
+      end
+
+      def latest_invoice_attributes
+        if self.latest_invoice_value.is_a?(Hash)
+          Hash(self.latest_invoice_value)
+        else
+          {}
+        end
+      end
+
+      def latest_invoice_attributes?
+        !self.latest_invoice_attributes.empty?
+      end
+
+      def latest_invoice_id
+        if self.latest_invoice_value.is_a?(String)
+          self.latest_invoice_value
+        end
+      end
+
+      def latest_invoice_id?
+        !self.latest_invoice_id.nil?
+      end
+
+      def latest_invoice
+        @latest_invoice ||= if self.latest_invoice_attributes?
+                        StripePlatform::Models::Invoice.new(self.latest_invoice_attributes)
+                      else
+                        StripePlatform::Models::Invoices.retrieve(self.latest_invoice_id)
+                      end
+      end
+
+      def latest_invoice?
+        !self.latest_invoice.nil?
       end
 
       # Returns the created unix timestamp
@@ -165,6 +199,22 @@ module StripePlatform
 
       def current_period_end_at?
         !self.current_period_end_at.nil?
+      end
+
+      def billing_cycle_anchor_unix_timestamp
+        @attributes['billing_cycle_anchor']
+      end
+
+      def billing_cycle_anchor_at
+        begin
+          Time.at(self.billing_cycle_anchor_unix_timestamp).utc
+        rescue
+          nil
+        end
+      end
+
+      def billing_cycle_anchor_at?
+        !self.billing_cycle_anchor_at.nil?
       end
 
       def is_active

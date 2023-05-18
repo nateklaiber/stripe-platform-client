@@ -15,6 +15,7 @@ require File.expand_path('../models/plans', __FILE__)
 require File.expand_path('../models/subscriptions', __FILE__)
 require File.expand_path('../models/products', __FILE__)
 require File.expand_path('../models/prices', __FILE__)
+require File.expand_path('../models/invoices', __FILE__)
 
 module StripePlatform
   module Requests
