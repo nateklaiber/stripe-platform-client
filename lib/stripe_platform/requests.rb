@@ -50,6 +50,7 @@ require File.expand_path('../requests/aggregate_usage_types', __FILE__)
 require File.expand_path('../requests/plan_usage_types', __FILE__)
 require File.expand_path('../requests/tax_behaviors', __FILE__)
 require File.expand_path('../requests/price_types', __FILE__)
+require File.expand_path('../requests/collection_methods', __FILE__)
 
 module StripePlatform
   module Requests

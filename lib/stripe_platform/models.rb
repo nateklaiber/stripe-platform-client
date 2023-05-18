@@ -120,6 +120,9 @@ require File.expand_path('../models/recurring_profile', __FILE__)
 
 require File.expand_path('../models/package_dimension', __FILE__)
 
+require File.expand_path('../models/collection_methods', __FILE__)
+require File.expand_path('../models/collection_method', __FILE__)
+
 module StripePlatform
   module Models
   end

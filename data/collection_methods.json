@@ -1,0 +1,10 @@
+[
+  {
+    "id": "charge_automatically",
+    "description": "Charge Automatically"
+  },
+  {
+    "id": "send_invoice",
+    "description": "Send Invoice"
+  }
+]

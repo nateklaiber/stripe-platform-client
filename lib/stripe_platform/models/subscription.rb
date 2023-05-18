@@ -6,6 +6,9 @@ module StripePlatform
       def_delegator :status, :active?, :status_active?
       def_delegator :status, :incomplete?, :status_incomplete?
 
+      def_delegator :collection_method, :charge_automatically?
+      def_delegator :collection_method, :send_invoice?
+
       # Returns an instance of the charge
       #
       # @param attributes [Hash]
@@ -50,6 +53,15 @@ module StripePlatform
 
       def collection_method_value
         @attributes['collection_method']
+      end
+      alias collection_method_id collection_method_value
+
+      def collection_method
+        @collection_method ||= StripePlatform::Models::CollectionMethods.retrieve(self.collection_method_value)
+      end
+
+      def collection_method?
+        !self.collection_method.nil?
       end
 
       def currency_code
