@@ -10,6 +10,121 @@ module StripePlatform
         @attributes['id']
       end
 
+      def payment_intent_value
+        @attributes['payment_intent']
+      end
+
+      def payment_intent_attributes
+        if self.payment_intent_value.is_a?(Hash)
+          Hash(self.payment_intent_value)
+        else
+          {}
+        end
+      end
+
+      def payment_intent_attributes?
+        !self.payment_intent_attributes.empty?
+      end
+
+      def payment_intent_id
+        if self.payment_intent_value.is_a?(String)
+          self.payment_intent_value
+        end
+      end
+
+      def payment_intent_id?
+        !self.payment_intent_id.nil?
+      end
+
+      def payment_intent
+        @payment_intent ||= if self.payment_intent_attributes?
+                      StripePlatform::Models::PaymentIntent.new(self.payment_intent_attributes)
+                    else
+                      StripePlatform::Models::PaymentIntents.retrieve(self.payment_intent_id)
+                    end
+      end
+
+      def payment_intent?
+        !self.payment_intent.nil?
+      end
+
+      def charge_value
+        @attributes['charge']
+      end
+
+      def charge_attributes
+        if self.charge_value.is_a?(Hash)
+          Hash(self.charge_value)
+        else
+          {}
+        end
+      end
+
+      def charge_attributes?
+        !self.charge_attributes.empty?
+      end
+
+      def charge_id
+        if self.charge_value.is_a?(String)
+          self.charge_value
+        end
+      end
+
+      def charge_id?
+        !self.charge_id.nil?
+      end
+
+      def charge
+        @charge ||= if self.charge_attributes?
+                      StripePlatform::Models::Charge.new(self.charge_attributes)
+                    else
+                      StripePlatform::Models::Charges.retrieve(self.charge_id)
+                    end
+      end
+
+      def charge?
+        !self.charge.nil?
+      end
+
+      def customer_value
+        @attributes['customer']
+      end
+
+      def customer_attributes
+        if self.customer_value.is_a?(Hash)
+          Hash(self.customer_value)
+        else
+          {}
+        end
+      end
+
+      def customer_attributes?
+        !self.customer_attributes.empty?
+      end
+
+      def customer_id
+        if self.customer_value.is_a?(String)
+          self.customer_value
+        end
+      end
+
+      def customer_id?
+        !self.customer_id.nil?
+      end
+
+      def customer
+        @customer ||= if self.customer_attributes?
+                        StripePlatform::Models::Customer.new(self.customer_attributes)
+                      else
+                        StripePlatform::Models::Customers.retrieve(self.customer_id)
+                      end
+      end
+
+      def customer?
+        !self.customer.nil?
+      end
+
+
       def subscription_value
         @attributes['subscription']
       end
@@ -33,7 +148,7 @@ module StripePlatform
       end
 
       def subscription_attributes?
-        !self.subscription_attributes.nil?
+        !self.subscription_attributes.empty?
       end
 
       def subscription
