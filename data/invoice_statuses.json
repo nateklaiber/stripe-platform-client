@@ -1,0 +1,22 @@
+[
+  {
+    "id": "draft",
+    "description": "Draft"
+  },
+  {
+    "id": "open",
+    "description": "Open"
+  },
+  {
+    "id": "void",
+    "description": "Void"
+  },
+  {
+    "id": "paid",
+    "description": "Paid"
+  },
+  {
+    "id": "uncollectible",
+    "description": "Uncollectible"
+  }
+]
