@@ -155,6 +155,14 @@ module StripePlatform
         !self.latest_invoice.nil?
       end
 
+      def upcoming_invoice
+        @upcoming_invoice ||= StripePlatform::Models::Invoices.upcoming(subscription_id: self.id)
+      end
+
+      def upcoming_invoice?
+        !self.upcoming_invoice.nil?
+      end
+
       # Returns the created unix timestamp
       #
       # @return [Integer]

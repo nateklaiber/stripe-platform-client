@@ -11,6 +11,8 @@ module StripePlatform
 
           params = {
             :version           => record_attributes['version'],
+            :customer_id       => record_attributes['customer'],
+            :subscription_id   => record_attributes['subscription'],
             :expand            => record_attributes.fetch('expand', []),
             :created           => record_attributes.fetch('created', {}),
             :ending_before     => record_attributes['ending_before'],
@@ -28,6 +30,14 @@ module StripePlatform
 
         def version
           @attributes[:version]
+        end
+
+        def customer_id
+          @attributes[:customer_id]
+        end
+
+        def subscription_id
+          @attributes[:subscription_id]
         end
 
         def starting_after
@@ -61,6 +71,8 @@ module StripePlatform
         def as_original_attributes
           attrs = {
             'version'        => self.version,
+            'customer'       => self.customer_id,
+            'subscription'   => self.subscription_id,
             'starting_after' => self.starting_after,
             'ending_before'  => self.ending_before,
             'limit'          => self.limit,

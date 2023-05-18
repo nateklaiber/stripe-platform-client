@@ -93,6 +93,14 @@ module StripePlatform
         @invoice_settings ||= StripePlatform::Models::InvoiceSettings.new(self.invoice_settings_attributes)
       end
 
+      def upcoming_invoice
+        @upcoming_invoice ||= StripePlatform::Models::Invoices.upcoming(customer_id: self.id)
+      end
+
+      def upcoming_invoice?
+        !self.upcoming_invoice.nil?
+      end
+
       # Returns the address attributes
       #
       # @return [Hash]

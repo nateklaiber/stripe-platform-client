@@ -84,6 +84,8 @@ require File.expand_path('../models/card', __FILE__)
 
 require File.expand_path('../models/us_bank_account', __FILE__)
 
+require File.expand_path('../models/discount', __FILE__)
+
 require File.expand_path('../models/coupon_durations', __FILE__)
 require File.expand_path('../models/coupon_duration', __FILE__)
 require File.expand_path('../models/coupons', __FILE__)

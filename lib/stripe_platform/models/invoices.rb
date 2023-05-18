@@ -33,6 +33,31 @@ module StripePlatform
         end
       end
 
+      def self.upcoming(params={}, &block)
+        request = StripePlatform::Requests::Invoices.upcoming(params, &block)
+
+        request.on(:success) do |resp|
+          response_body    = resp.body
+
+          return StripePlatform::Models::Invoice.new(response_body)
+        end
+
+        request.on(400) do |resp|
+          response_body = resp.body
+          error         = StripePlatform::Models::Error.new(response_body)
+
+          StripePlatform::Client.logger.info do
+            error.message
+          end
+
+          return nil
+        end
+
+        request.on(:failure) do |resp|
+          return nil
+        end
+      end
+
       def self.create(record_attributes, params={}, &block)
         request = StripePlatform::Requests::Invoices.create(record_attributes, params, &block)
 

@@ -222,6 +222,12 @@
     "templated": true
   },
   {
+    "name": "Invoices Upcoming",
+    "path": "{version}/invoices/upcoming{?customer,subscription,expand*}",
+    "rel": "invoices-upcoming",
+    "templated": true
+  },
+  {
     "name": "Invoice",
     "path": "{version}/invoices/{id}{?expand*}",
     "rel": "invoice",
