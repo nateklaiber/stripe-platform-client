@@ -55,8 +55,23 @@ module StripePlatform
         Hash(@attributes.fetch('card', {}))
       end
 
+      def us_bank_account_attributes
+        Hash(@attributes.fetch('us_bank_account', {}))
+      end
+
+      def source_attributes
+        case(self.type_id)
+        when('card')
+          self.card_attributes
+        when('us_bank_account')
+          self.us_bank_account_attributes
+        else
+          {}
+        end
+      end
+
       def source
-        self.type.object_for(self.card_attributes)
+        self.type.object_for(self.source_attributes)
       end
 
       def card

@@ -29,6 +29,8 @@ module StripePlatform
         case(self.id)
         when('card')
           StripePlatform::Models::Card.new(record_attributes)
+        when('us_bank_account')
+          StripePlatform::Models::UsBankAccount.new(record_attributes)
         end
       end
 

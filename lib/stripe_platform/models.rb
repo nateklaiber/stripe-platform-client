@@ -78,6 +78,8 @@ require File.expand_path('../models/billing_details', __FILE__)
 require File.expand_path('../models/card_checks', __FILE__)
 require File.expand_path('../models/card', __FILE__)
 
+require File.expand_path('../models/us_bank_account', __FILE__)
+
 require File.expand_path('../models/plans', __FILE__)
 require File.expand_path('../models/plan', __FILE__)
 
