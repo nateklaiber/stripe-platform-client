@@ -89,6 +89,10 @@ module StripePlatform
         Hash(@attributes.fetch('invoice_settings', {}))
       end
 
+      def invoice_settings
+        @invoice_settings ||= StripePlatform::Models::InvoiceSettings.new(self.invoice_settings_attributes)
+      end
+
       # Returns the address attributes
       #
       # @return [Hash]
