@@ -146,6 +146,15 @@ module StripePlatform
       def status_value
         @attributes['status']
       end
+      alias status_id status_value
+
+      def status
+        @status ||= StripePlatform::Models::PaymentIntentStatuses.retrieve(self.status_value)
+      end
+
+      def status?
+        !self.status.nil?
+      end
 
       # Returns the created unix timestamp
       #

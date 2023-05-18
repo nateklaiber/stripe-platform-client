@@ -1,0 +1,30 @@
+[
+  {
+    "id": "requires_payment_method",
+    "description": "Requires Payment Method"
+  },
+  {
+    "id": "requires_confirmation",
+    "description": "Requires Confirmation"
+  },
+  {
+    "id": "requires_action",
+    "description": "Requires Action"
+  },
+  {
+    "id": "processing",
+    "description": "Processing"
+  },
+  {
+    "id": "requires_capture",
+    "description": "Requires Capture"
+  },
+  {
+    "id": "canceled",
+    "description": "Canceled"
+  },
+  {
+    "id": "succeeded",
+    "description": "Succeeded"
+  }
+]

@@ -67,7 +67,6 @@ module StripePlatform
         Hash(@attributes.fetch('items', {}))
       end
 
-
       def customer_value
         @attributes['customer']
       end
@@ -228,6 +227,10 @@ module StripePlatform
       end
       alias is_livemode? is_livemode
       alias livemode? is_livemode
+
+      def has_payment_method?
+        !((self.status? && self.status.incomplete?) && (self.latest_invoice? && self.latest_invoice.payment_intent? && self.latest_invoice.payment_intent.status? && self.latest_invoice.payment_intent.status.has_payment_method?))
+      end
 
       # Returns the original attributes
       #
