@@ -3,6 +3,8 @@ require File.expand_path('../models/directory_entry', __FILE__)
 
 require File.expand_path('../models/metadata', __FILE__)
 
+require File.expand_path('../models/time_period', __FILE__)
+
 require File.expand_path('../models/event_types', __FILE__)
 require File.expand_path('../models/event_type', __FILE__)
 
@@ -89,11 +91,15 @@ require File.expand_path('../models/invoice_statuses', __FILE__)
 require File.expand_path('../models/invoice_status', __FILE__)
 require File.expand_path('../models/invoices', __FILE__)
 require File.expand_path('../models/invoice', __FILE__)
+require File.expand_path('../models/invoice_items', __FILE__)
+require File.expand_path('../models/invoice_item', __FILE__)
 
 require File.expand_path('../models/subscription_statuses', __FILE__)
 require File.expand_path('../models/subscription_status', __FILE__)
 require File.expand_path('../models/subscriptions', __FILE__)
 require File.expand_path('../models/subscription', __FILE__)
+require File.expand_path('../models/subscription_items', __FILE__)
+require File.expand_path('../models/subscription_item', __FILE__)
 
 require File.expand_path('../models/products', __FILE__)
 require File.expand_path('../models/product', __FILE__)

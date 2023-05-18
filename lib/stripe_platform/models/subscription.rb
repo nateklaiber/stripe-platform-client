@@ -67,6 +67,18 @@ module StripePlatform
         Hash(@attributes.fetch('items', {}))
       end
 
+      def items_data_attributes
+        Array(self.items_attributes.fetch('data', []))
+      end
+
+      def items
+        @items ||= StripePlatform::Models::SubscriptionItems.new(self.items_data_attributes)
+      end
+
+      def items?
+        self.items.any?
+      end
+
       def customer_value
         @attributes['customer']
       end

@@ -19,8 +19,12 @@ require File.expand_path('../requests/plans', __FILE__)
 require File.expand_path('../requests/subscription_statuses', __FILE__)
 require File.expand_path('../requests/subscriptions', __FILE__)
 
+require File.expand_path('../requests/subscription_items', __FILE__)
+
 require File.expand_path('../requests/invoice_statuses', __FILE__)
 require File.expand_path('../requests/invoices', __FILE__)
+
+require File.expand_path('../requests/invoice_items', __FILE__)
 
 require File.expand_path('../requests/products', __FILE__)
 

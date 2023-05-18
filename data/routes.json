@@ -204,6 +204,18 @@
     "templated": true
   },
   {
+    "name": "Subscription Items",
+    "path": "{version}/subscription_items{?subscription,ending_before,limit,starting_after,expand*}",
+    "rel": "subscription-items",
+    "templated": true
+  },
+  {
+    "name": "Subscription Item",
+    "path": "{version}/subscription_item/{id}{?expand*}",
+    "rel": "subscription-item",
+    "templated": true
+  },
+  {
     "name": "Invoices",
     "path": "{version}/invoices{?customer,status,subscription,collection_method,created,due_date,ending_before,limit,starting_after,expand*}",
     "rel": "invoices",
@@ -213,6 +225,18 @@
     "name": "Invoice",
     "path": "{version}/invoices/{id}{?expand*}",
     "rel": "invoice",
+    "templated": true
+  },
+  {
+    "name": "Invoice Items",
+    "path": "{version}/invoiceitems{?customer,created,ending_before,invoice,limit,pending,starting_after,expand*}",
+    "rel": "invoice-items",
+    "templated": true
+  },
+  {
+    "name": "Invoice Item",
+    "path": "{version}/invoiceitems/{id}{?expand*}",
+    "rel": "invoice-item",
     "templated": true
   }
 ]
