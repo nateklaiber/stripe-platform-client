@@ -14,7 +14,6 @@ module StripePlatform
             :name        => record_attributes['name'],
             :email       => record_attributes['email'],
             :phone       => record_attributes['phone'],
-            :phone       => record_attributes['phone'],
             :metadata    => record_attributes.fetch('metadata', {}),
             :address     => record_attributes.fetch('address', {}),
           }
